@@ -2,7 +2,8 @@
 #include <cassert>
 #include <fstream>
 
-#include <zip_file.hpp>
+//#include <zip_file.hpp>
+#include <miniz-cpp.hpp>
 
 namespace {
 

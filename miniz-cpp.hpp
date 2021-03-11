@@ -5652,10 +5652,11 @@ class zip_file
     }
 
     // yhyu13 Reference : https://github.com/cleeus/miniz-cpp/commit/d9c57a3283f9f9ea11ebb5b854950317c4ef4f40
-    if (position + 2 >= buffer_.size())
-    {
-        throw std::runtime_error("central dictionary position invalid");
-    }
+    // Actually, adding this check would fail on loading
+    //if (position + 2 >= buffer_.size())
+    //{
+    //    throw std::runtime_error("central dictionary position invalid");
+    //}
 
     uint16_t length = static_cast<uint16_t>(buffer_[position + 1]);
     length = static_cast<uint16_t>(length << 8) + static_cast<uint16_t>(buffer_[position]);
